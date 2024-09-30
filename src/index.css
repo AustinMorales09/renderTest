@@ -1,13 +1,204 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-icon div {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.search-bar {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 5px;
+}
+
+.account-button button {
+  padding: 5px 10px;
+}
+
+.cart-icon {
+  font-size: 24px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  z-index: 1001;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.sidebar-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-content ul li {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+/* Toggle Hamburger to X */
+.hamburger-icon.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon.open div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+/* Basic resets */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* App container should fill the entire viewport */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* The main content should grow to fill available space */
+.content {
+  flex: 1; /* Allow the content to grow and push the footer down */
+  padding: 20px;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #1a1a1a;
+  color: #ddd;
+  padding: 40px 20px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444;
+}
+
+/* Individual Footer Sections */
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 20px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f1f1f1;
+}
+
+/* Bottom Footer Styling */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #111;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+  color: #bbb;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
 }

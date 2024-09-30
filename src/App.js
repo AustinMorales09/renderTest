@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+// App.js
+import React from 'react';
+import Navbar from './SideNavbar'; // Make sure the path is correct
+import Footer from './Footer';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div style={{ padding: '100px' }}>
+        <h1>Main Content</h1>
+        <p>Click the hamburger icon to open the side navigation bar.</p>
+        <h1>Main Content</h1>
+        <p>Click the hamburger icon to open the side navigation bar.</p>
+        <h1>Main Content</h1>
+        <p>Click the hamburger icon to open the side navigation bar.</p>
+        <h1>Main Content</h1>
+        <p>Click the hamburger icon to open the side navigation bar.</p>
+        <h1>Main Content</h1>
+        <p>Click the hamburger icon to open the side navigation bar.</p>
+      </div>
+      <Footer />
     </div>
   );
 }
