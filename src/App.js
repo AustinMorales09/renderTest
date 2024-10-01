@@ -1,26 +1,18 @@
-// App.js
-import React from 'react';
-import Navbar from './SideNavbar'; // Make sure the path is correct
-import Footer from './Footer';
-function App() {
-  return (
-    <div className="App">
+import React, { Component } from 'react'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Shop from './Shop'
+import Navbar from './SideNavbar'
+import Footer from './Footer'
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
       <Navbar />
-      <div style={{ padding: '100px' }}>
-        <h1>Main Content</h1>
-        <p>Click the hamburger icon to open the side navigation bar.</p>
-        <h1>Main Content</h1>
-        <p>Click the hamburger icon to open the side navigation bar.</p>
-        <h1>Main Content</h1>
-        <p>Click the hamburger icon to open the side navigation bar.</p>
-        <h1>Main Content</h1>
-        <p>Click the hamburger icon to open the side navigation bar.</p>
-        <h1>Main Content</h1>
-        <p>Click the hamburger icon to open the side navigation bar.</p>
-      </div>
-      <Footer />
-    </div>
-  );
+        <Routes>
+          <Route path='/' element={<Shop/>}/>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    )
+  }
 }
-
-export default App;

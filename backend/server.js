@@ -1,13 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const Pet = require('./models/Pets');
+const cors = require('cors')
 // Initialize Express
 const app = express();
-const port = 3000;
+const port = 5500;
 
 // Middleware for JSON parsing
 app.use(express.json());
-
+app.use(cors({
+    origin: 'http://localhost:3000',  // Replace with your frontend origin
+ 
+}));
 // Connect to MongoDB (replace with your own connection string)
 mongoose.connect('mongodb+srv://test:Kable123@cluster0.mlagjiq.mongodb.net/', {
     useNewUrlParser: true,
@@ -16,14 +20,6 @@ mongoose.connect('mongodb+srv://test:Kable123@cluster0.mlagjiq.mongodb.net/', {
 .then(() => console.log('Connected to MongoDB'))
 .catch((error) => console.error('Could not connect to MongoDB', error));
 
-// Define the Pet schema and model
-const petSchema = new mongoose.Schema({
-    name: String,
-    category: String, // Instead of 'type', we use 'category'
-    age: Number
-});
-
-const Pet = mongoose.model('Pet', petSchema);
 
 // Routes
 
@@ -52,11 +48,12 @@ app.get('/pets/:category', async (req, res) => {
 
 // Add a new pet
 app.post('/pets', async (req, res) => {
-    const { name, category, age } = req.body;
+    const { name, category,imageURL, age } = req.body;
 
     const pet = new Pet({
         name,
-        category, // Category is now stored in the document
+        category,
+        imageURL, // Category is now stored in the document
         age
     });
 
