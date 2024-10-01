@@ -10,7 +10,7 @@ const Shop = () => {
     useEffect(() => {
         const fetchPets = async () => {
             try {
-                const response = await axios.get('http://localhost:5500/pets'); // Replace with your API URL
+                const response = await axios.get('https://render-backend-test-2sgf.onrender.com/pets'); // Replace with your API URL
                 setPets(response.data);
                 console.log(response.data)
                 setLoading(false);
